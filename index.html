@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Classement Dynamique avec Matchs</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+<body>
+    <div class="navbar">
+        <!-- Bandeau supérieur -->
+        <button class="tab-btn" onclick="showTab('ranking')">Classement</button>
+        <button class="tab-btn" onclick="showTab('history')">Historique</button>
+        <button class="tab-btn" onclick="showTab('upcoming-matches')">Matchs restants</button>
+        <button id="adminTab" class="tab-btn" style="display: none;" onclick="showTab('admin')">Gestion</button>
+        <button class="tab-btn" id="adminTab" onclick="authenticate()">Admin</button>
+    </div>
+    
+    <div class="container">
+        <h1>Dzertigun Power Ranking</h1>
+
+        <!-- Tableau classement -->
+        
+        <div class="tab-content" id="ranking" style="display: none;">
+        <table id="ranking-table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Joueur</th>
+                <th></th>
+                <th>Pts</th>
+                <th>Matchs</th>
+                <th>5 derniers matchs</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Contenu du tableau -->
+        </tbody>
+        </table>
+        </div>
+
+         <!-- Historique des matchs -->
+        <div id="history" class="tab-content" style="display:none;">
+            <h2>Historique des Matchs</h2> 
+            <table id="history-table">
+                <thead>
+                    <tr>
+                        <th>J1</th>
+                        <th>J2</th>
+                        <th>Score J1</th>
+                        <th>Score J2</th>
+                        <th>Éditer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     <!-- Contenu du tableau -->
+                </tbody>
+            </table>
+        </div>
+
+         <!-- Matchs restants -->
+        <div id="upcoming-matches" class="tab-content" style="display: none;">
+            <h2>Matchs à venir</h2>
+            <table id="upcoming-matches-table">
+                <thead>
+                    <tr>
+                        <th>Joueur</th>
+                        <th>Adversaires restants</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Contenu du tableau -->
+                </tbody>
+            </table>
+        </div>
+
+
+                <!-- Formulaire de match -->
+
+        <div class="tab-content" id="admin" style="display: none;">
+
+            <div id="match-form">
+            
+            <h2>Ajouter un match</h2>
+            <form id="match-form">
+                <label for="player1">Joueur 1:</label>
+                <select id="player1" required></select>
+                <label for="score1">Score J1:</label>
+                <select id="score1" required >
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <label for="player2">Joueur 2:</label>
+                <select id="player2" required></select>
+                <label for="score2">Score J2:</label>
+                <select id="score2" required >
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button type="submit">Ajouter le match</button>
+            </form>
+
+            <!-- Bouton pour réinitialiser le tableau -->
+            <button onclick="reset()">Réinitialiser le tableau</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Classement Dynamique. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

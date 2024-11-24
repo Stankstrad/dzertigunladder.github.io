@@ -1,0 +1,296 @@
+/* Barre de navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 10px 0;
+    z-index: 1000;
+    border-bottom: 1px solid white; 
+}
+
+.navbar .tab-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.navbar .tab-btn:hover {
+    color: #3be17f;
+}
+
+.navbar .tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar .tab-btn:hover::after {
+    width: 100%;
+}
+
+/* Style général du body */
+body {
+    font-family: Arial, sans-serif;
+    background: url('bg.png') no-repeat center center fixed; 
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    height: 100%;   
+}
+
+/* Conteneur central pour tout sauf la barre de navigation et le footer */
+.container {
+    max-width: 1200px;
+    margin: 20px 0;
+    text-align: center;
+    padding: 20px;
+    width: 40%;
+}
+
+h1 {
+    padding-top: 30px;
+    font-family: IMPACT;
+    font-size: 60px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    padding-top: 10px;
+    font-family: IMPACT;
+    font-size: 30px;
+    letter-spacing: 1px;
+
+}
+
+/* Tableaux */
+table{
+    background: rgba(0,0,0,.8);
+    opacity: 60%;
+    font-style: italic;
+    font-size: 18px;
+    color: #fff;
+    border-collapse: collapse;
+    border-radius: 15px;
+}
+
+thead th {
+    border-bottom: 1px solid #fff;
+    color: #3be17f;
+    padding: 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+tbody td {
+    padding: 10px;
+    text-align: right;
+    height: 35px;
+}
+
+/* Classement général */
+#ranking-table th:nth-child(1),
+#ranking-table td:nth-child(1) {
+    width: 5%; /* Position */
+    font-weight: bold;
+}
+
+#ranking-table th:nth-child(2),
+#ranking-table td:nth-child(2) {
+    width: 30%; /* Nom */
+    text-align: left;
+    padding-left: 20px;
+    text-transform: uppercase;
+}
+
+#ranking-table th:nth-child(3),
+#ranking-table td:nth-child(3) {
+    width: 10%; /* Personnage */
+    text-align: center;
+}
+
+#ranking-table th:nth-child(4),
+#ranking-table td:nth-child(4) {
+    width: 10%; /* Points */
+}
+
+#ranking-table th:nth-child(5),
+#ranking-table td:nth-child(5) {
+    width: 10%; /* Matches */
+}
+
+#ranking-table th:nth-child(6){
+    width: 30%; 
+    padding-right: 20px;
+    text-align: right; /* Historique */
+}
+
+/* Appliquer le style à toute la ligne pour les rangs */
+.gold-rank {
+    background-color: rgba(199, 181, 30, 0.3); /* Light gold background */
+    color: #c7b51e;
+}
+
+.silver-rank {
+    background-color: rgba(186, 186, 186, 0.3); /* Light silver background */
+    color: #bababa;
+}
+
+.bronze-rank {
+    background-color: rgba(153, 101, 44, 0.3); /* Light bronze background */
+    color: #99652c;
+}
+
+/* Style par défaut pour les autres rangs */
+.other-rank {
+    color: #fff;
+}
+
+/* Historique des matchs */
+.history-cell {
+    justify-content: center; 
+    gap: 100px;
+    height: 20px;
+}
+
+
+/* Historique */
+#history-table th:nth-child(1),
+#history-table td:nth-child(1) {
+    width: 15%; /* J1 */
+    text-align: left;
+    padding-left: 20px;
+    text-transform: uppercase;
+}
+
+#history-table th:nth-child(2),
+#history-table td:nth-child(2) {
+    width: 15%; /* J2 */
+    text-align: left;
+    padding-left: 20px;
+    text-transform: uppercase;
+}
+
+#history-table th:nth-child(3),
+#history-table td:nth-child(3) {
+    width: 10%; /* SCORE J1 */
+}
+
+#history-table th:nth-child(4),
+#history-table td:nth-child(4) {
+    width: 10%; /* SCORE J2 */
+}
+
+#history-table th:nth-child(5),
+#history-table td:nth-child(5) {
+    width: 10%; /* EDITER */
+}
+
+.winner {
+    color: #3be17f; /* Couleur verte pour le gagnant */
+}
+
+/* Matchs restants */
+#upcoming-matches th:nth-child(1){
+    width: 20%; /* JOUEUR */
+    text-align: left;
+    padding-left: 20px;
+    text-transform: uppercase;
+}
+
+#upcoming-matches td:nth-child(1) {
+    width: 20%; /* JOUEUR */
+    text-align: left;
+    padding-left: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+}
+
+#upcoming-matches th:nth-child(2){
+    width: 80%; /* ADVERSAIRES */
+    text-align: left;
+    padding-left: 15px;
+    text-transform: uppercase;
+}
+
+#upcoming-matches td:nth-child(2) {
+    width: 80%; /* ADVERSAIRES */
+    padding: 20px;
+    text-align: justify;
+    font-style: normal;
+}
+
+
+/* Formulaire */
+form {
+    margin-bottom: 20px;
+}
+
+input, select {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3be17f;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+footer {    
+    width: 100%;          
+    background-color: #333; 
+    color: white;        
+    text-align: center;    
+    padding: 10px;        
+    z-index: 1000;     
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .container {
+        width: 80%; /* Less width for mobile screens */
+    }
+
+    table {
+        width: 100%; /* Make tables full-width */
+    }
+    
+    .navbar {
+        padding: 5px 0;
+    }
+}
