@@ -76,7 +76,7 @@ h1 {
 
 h2 {
     padding-top: 10px;
-    font-family: IMPACT;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
     letter-spacing: 1px;
 
@@ -280,10 +280,10 @@ footer p {
     margin: 0;
 }
 
-.btn btn-danger [
+.btn btn-danger {
     padding: 20px;
-]
-
+}
+    
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
