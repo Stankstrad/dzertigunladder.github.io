@@ -477,21 +477,32 @@ function reset() {
     }
 }
 
-// Fonction pour réinitialiser la base de données
+// Définir le mot de passe
+const RESET_PASSWORD = "Stanks123"; // Modifiez-le selon vos besoins
+
+// Fonction pour réinitialiser la base de données avec mot de passe
 function resetDatabase() {
-    // Confirmation avant de tout effacer
-    if (confirm("Êtes-vous sûr de vouloir réinitialiser la base de données ? Toutes les données seront perdues.")) {
-        // Supprime toutes les données du localStorage
-        localStorage.clear();
+    // Demander le mot de passe
+    const password = prompt("Veuillez entrer le mot de passe pour réinitialiser la base de données :");
 
-        // Réinitialise le tableau des joueurs en mémoire
-        players = [];
+    // Vérifier le mot de passe
+    if (password === RESET_PASSWORD) {
+        if (confirm("Êtes-vous sûr de vouloir réinitialiser la base de données ? Toutes les données seront perdues.")) {
+            // Supprime toutes les données du localStorage
+            localStorage.clear();
 
-        // Met à jour l'interface utilisateur
-        updateTable();
+            // Réinitialise le tableau des joueurs en mémoire
+            players = [];
 
-        // Message de confirmation
-        alert("La base de données a été réinitialisée avec succès.");
+            // Met à jour l'interface utilisateur
+            updateTable();
+
+            // Message de confirmation
+            alert("La base de données a été réinitialisée avec succès.");
+        }
+    } else {
+        // Message d'erreur en cas de mot de passe incorrect
+        alert("Mot de passe incorrect. La réinitialisation a été annulée.");
     }
 }
 
