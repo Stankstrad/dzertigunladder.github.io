@@ -1,5 +1,29 @@
 // script.js
 
+let players = [
+    { name: "Akuroi", points: 0, matches: 0, history: [], character: "Akuma" },
+    { name: "Baardack", points: 0, matches: 0, history: [], character: "JP" },
+    { name: "8kmh", points: 0, matches: 0, history: [], character: "Dhalsim" },
+    { name: "Momo", points: 0, matches: 0, history: [], character: "Rashid" },
+    { name: "TomScro", points: 0, matches: 0, history: [], character: "Blanka" },
+    { name: "Skull", points: 0, matches: 0, history: [], character: "Deejay" },
+    { name: "Dims", points: 0, matches: 0, history: [], character: "Juri" },
+    { name: "Tooru", points: 0, matches: 0, history: [], character: "Kimberly" },
+    { name: "Muda", points: 0, matches: 0, history: [], character: "Marisa" },
+    { name: "Oden", points: 0, matches: 0, history: [], character: "Akuma" },
+    { name: "Mochidess", points: 0, matches: 0, history: [], character: "Deejay" },
+    { name: "Vezmo", points: 0, matches: 0, history: [], character: "Juri" },
+    { name: "Bolognaise", points: 0, matches: 0, history: [], character: "Akuma" },
+    { name: "Amms", points: 0, matches: 0, history: [], character: "Deejay" },
+    { name: "Dawnblade", points: 0, matches: 0, history: [], character: "Ryu" },
+    { name: "Itona", points: 0, matches: 0, history: [], character: "Jamie" },
+    { name: "Boyskor", points: 0, matches: 0, history: [], character: "Blanka" },
+    { name: "Yuzeko", points: 0, matches: 0, history: [], character: "Ken" }
+];
+
+// Initialisation des joueurs au démarrage
+initializePlayers();
+
 function saveToLocalStorage() {
     localStorage.setItem('players', JSON.stringify(players));
     localStorage.setItem('matchHistory', JSON.stringify(matchHistory));
@@ -51,36 +75,11 @@ function authenticate() {
     }
 }
 
-
 // Fonction pour afficher/masquer les contrôles administrateur
 function toggleAdminControls(isVisible) {
     const addMatchSection = document.getElementById("add-match-section");
     addMatchSection.style.display = isVisible ? "block" : "none";
 }
-
-let players = [
-    { name: "Akuroi", points: 0, matches: 0, history: [], character: "Akuma" },
-    { name: "Baardack", points: 0, matches: 0, history: [], character: "JP" },
-    { name: "8kmh", points: 0, matches: 0, history: [], character: "Dhalsim" },
-    { name: "Momo", points: 0, matches: 0, history: [], character: "Rashid" },
-    { name: "TomScro", points: 0, matches: 0, history: [], character: "Blanka" },
-    { name: "Skull", points: 0, matches: 0, history: [], character: "Deejay" },
-    { name: "Dims", points: 0, matches: 0, history: [], character: "Juri" },
-    { name: "Tooru", points: 0, matches: 0, history: [], character: "Kimberly" },
-    { name: "Muda", points: 0, matches: 0, history: [], character: "Marisa" },
-    { name: "Oden", points: 0, matches: 0, history: [], character: "Akuma" },
-    { name: "Mochidess", points: 0, matches: 0, history: [], character: "Deejay" },
-    { name: "Vezmo", points: 0, matches: 0, history: [], character: "Juri" },
-    { name: "Bolognaise", points: 0, matches: 0, history: [], character: "Akuma" },
-    { name: "Amms", points: 0, matches: 0, history: [], character: "Deejay" },
-    { name: "Dawnblade", points: 0, matches: 0, history: [], character: "Ryu" },
-    { name: "Itona", points: 0, matches: 0, history: [], character: "Jamie" },
-    { name: "Boyskor", points: 0, matches: 0, history: [], character: "Blanka" },
-    { name: "Yuzeko", points: 0, matches: 0, history: [], character: "Ken" }
-];
-
-// Initialisation des joueurs au démarrage
-initializePlayers();
 
 // Afficher le tableau du classement au chargement
 updateTable();
@@ -451,7 +450,6 @@ function reset() {
     if (confirmation) {
         // Réinitialisation des joueurs à leurs valeurs par défaut
         players.forEach(player => {
-            player.name = player.name
             player.points = 0;
             player.matches = 0;
             player.history = [];
