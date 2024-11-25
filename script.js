@@ -59,26 +59,26 @@ function toggleAdminControls(isVisible) {
 }
 
 let players = [
-    { name: "Joueur 1", points: 0, matches: 0, history: [], character: "Guerrier" },
-    { name: "Joueur 2", points: 0, matches: 0, history: [], character: "Mage" },
-    { name: "Joueur 3", points: 0, matches: 0, history: [], character: "Assassin" },
-    { name: "Joueur 4", points: 0, matches: 0, history: [], character: "Archer" },
-    { name: "Joueur 5", points: 0, matches: 0, history: [], character: "Prêtre" },
-    { name: "Joueur 6", points: 0, matches: 0, history: [], character: "Paladin" },
-    { name: "Joueur 7", points: 0, matches: 0, history: [], character: "Ranger" },
-    { name: "Joueur 8", points: 0, matches: 0, history: [], character: "Sorcier" },
-    { name: "Joueur 9", points: 0, matches: 0, history: [], character: "Berserker" },
-    { name: "Joueur 10", points: 0, matches: 0, history: [], character: "Ninja" },
-    { name: "Joueur 11", points: 0, matches: 0, history: [], character: "Clerc" },
-    { name: "Joueur 12", points: 0, matches: 0, history: [], character: "Chevalier" },
-    { name: "Joueur 13", points: 0, matches: 0, history: [], character: "Voleur" },
-    { name: "Joueur 14", points: 0, matches: 0, history: [], character: "Magicien" },
-    { name: "Joueur 15", points: 0, matches: 0, history: [], character: "Druide" },
-    { name: "Joueur 16", points: 0, matches: 0, history: [], character: "Chasseur" },
-    { name: "Joueur 17", points: 0, matches: 0, history: [], character: "Samouraï" },
-    { name: "Joueur 18", points: 0, matches: 0, history: [], character: "Gladiateur" },
-    { name: "Joueur 19", points: 0, matches: 0, history: [], character: "Rogue" },
-    { name: "Joueur 20", points: 0, matches: 0, history: [], character: "Barde" }
+    { name: "Joueur 1", points: 0, matches: 0, history: [], character: "guerrier.png" },
+    { name: "Joueur 2", points: 0, matches: 0, history: [], character: "guerrier.png" },
+    { name: "Joueur 3", points: 0, matches: 0, history: [], character: "guerrier.png" },
+    { name: "Joueur 4", points: 0, matches: 0, history: [], character: "guerrier.png" },
+    { name: "Joueur 5", points: 0, matches: 0, history: [], character: "guerrier.png" },
+    { name: "Joueur 6", points: 0, matches: 0, history: [], character: "guerrier.png" },
+    { name: "Joueur 7", points: 0, matches: 0, history: [], character: "guerrier.png" },
+    { name: "Joueur 8", points: 0, matches: 0, history: [], character: "guerrier.png" },
+    { name: "Joueur 9", points: 0, matches: 0, history: [], character: "guerrier.png" },
+    { name: "Joueur 10", points: 0, matches: 0, history: [], character: "guerrier.png" },
+    { name: "Joueur 11", points: 0, matches: 0, history: [], character: "guerrier.png" },
+    { name: "Joueur 12", points: 0, matches: 0, history: [], character: "guerrier.png" },
+    { name: "Joueur 13", points: 0, matches: 0, history: [], character: "guerrier.png" },
+    { name: "Joueur 14", points: 0, matches: 0, history: [], character: "guerrier.png" },
+    { name: "Joueur 15", points: 0, matches: 0, history: [], character: "guerrier.png" },
+    { name: "Joueur 16", points: 0, matches: 0, history: [], character: "guerrier.png" },
+    { name: "Joueur 17", points: 0, matches: 0, history: [], character: "guerrier.png" },
+    { name: "Joueur 18", points: 0, matches: 0, history: [], character: "guerrier.png" },
+    { name: "Joueur 19", points: 0, matches: 0, history: [], character: "guerrier.png" },
+    { name: "Joueur 20", points: 0, matches: 0, history: [], character: "guerrier.png" },
 ];
 
 
@@ -211,7 +211,9 @@ function updateTable() {
         row.innerHTML = `
             <td>${index + 1}</td>
             <td>${player.name}</td>
-            <td>${player.character}</td>
+            <td>
+                <img src="${player.character ? player.character : 'default.png'}" alt="${player.name}" style="width: 40px; height: 40px; border-radius: 50%;">
+            </td>
             <td>${player.points}</td>
             <td>${player.matches}</td>
             <td class="history-cell">
