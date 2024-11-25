@@ -187,6 +187,12 @@ function updateTable() {
     const tableBody = document.querySelector('#ranking-table tbody');
     tableBody.innerHTML = '';
 
+    // Vérifie si des joueurs existent
+    if (players.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="5">Aucune donnée disponible.</td></tr>';
+        return;
+    }
+
     // Tri des joueurs par points puis par nombre de matchs
     const sortedPlayers = players.sort((a, b) => {
         if (b.points === a.points) {
@@ -471,5 +477,25 @@ function reset() {
     }
 }
 
+// Fonction pour réinitialiser la base de données
+function resetDatabase() {
+    // Confirmation avant de tout effacer
+    if (confirm("Êtes-vous sûr de vouloir réinitialiser la base de données ? Toutes les données seront perdues.")) {
+        // Supprime toutes les données du localStorage
+        localStorage.clear();
+
+        // Réinitialise le tableau des joueurs en mémoire
+        players = [];
+
+        // Met à jour l'interface utilisateur
+        updateTable();
+
+        // Message de confirmation
+        alert("La base de données a été réinitialisée avec succès.");
+    }
+}
+
+// Ajout de l'événement sur le bouton reset
+document.getElementById('reset-database').addEventListener('click', resetDatabase);
 
 
