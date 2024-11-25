@@ -79,7 +79,6 @@ let players = [
     { name: "Yuzeko", points: 0, matches: 0, history: [], character: "Ken" }
 ];
 
-
 // Initialisation des joueurs au démarrage
 initializePlayers();
 
@@ -444,10 +443,6 @@ function showUpcomingMatches() {
 }
 
 
-
-
-
-
 // Fonction pour réinitialiser le tableau 
 function reset() {
     // Demander une confirmation avant de réinitialiser
@@ -456,6 +451,7 @@ function reset() {
     if (confirmation) {
         // Réinitialisation des joueurs à leurs valeurs par défaut
         players.forEach(player => {
+            player.name = player.name
             player.points = 0;
             player.matches = 0;
             player.history = [];
