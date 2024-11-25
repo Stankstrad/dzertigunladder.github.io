@@ -211,9 +211,7 @@ function updateTable() {
         row.innerHTML = `
             <td>${index + 1}</td>
             <td>${player.name}</td>
-            <td>
-                <img src="${player.character ? player.character : 'default.png'}" alt="${player.name}" style="width: 40px; height: 40px; border-radius: 50%;">
-            </td>
+            <td>${player.character}</td>
             <td>${player.points}</td>
             <td>${player.matches}</td>
             <td class="history-cell">
