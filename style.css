@@ -280,6 +280,11 @@ footer p {
     margin: 0;
 }
 
+.btn btn-danger [
+    padding: 20px;
+]
+
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .container {
