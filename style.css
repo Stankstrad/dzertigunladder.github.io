@@ -254,7 +254,7 @@ input, select {
 }
 
 button {
-    padding: 20px;
+    padding: 10px 20px;
     background-color: #3be17f;
     color: black;
     border: none;
@@ -299,4 +299,3 @@ footer p {
         padding: 5px 0;
     }
 }
-
